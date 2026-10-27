@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKU Linguistics Interview Prep - Module 1-3</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+        }
+        /* Sidebar TOC */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 250px;
+            height: 100vh;
+            background: #fff;
+            border-right: 2px solid #007bff;
+            padding: 20px;
+            overflow-y: auto;
+            box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+            z-index: 999;
+            transition: transform 0.3s ease;
+        }
+        .sidebar.collapsed {
+            transform: translateX(-250px);
+        }
+        .sidebar-toggle {
+            position: fixed;
+            left: 250px;
+            top: 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 18px;
+            transition: left 0.3s ease;
+            box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+        }
+        .sidebar-toggle.collapsed {
+            left: 0;
+        }
+        .sidebar h2 {
+            font-size: 1.2em;
+            color: #007bff;
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #007bff;
+        }
+        .sidebar a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 8px 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            font-size: 0.9em;
+            transition: all 0.2s;
+        }
+        .sidebar a:hover {
+            background: #e3f2fd;
+            color: #007bff;
+        }
+        /* Main content */
+        .container {
+            margin-left: 270px;
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            transition: margin-left 0.3s ease;
+        }
+        .container.expanded {
+            margin-left: 20px;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+            .sidebar.collapsed {
+                transform: translateX(-200px);
+            }
+            .sidebar-toggle {
+                left: 200px;
+            }
+            .sidebar-toggle.collapsed {
+                left: 0;
+            }
+            .container {
+                margin-left: 20px;
+            }
+        }
+        h1 {
+            color: #1a1a1a;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #007bff;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 4px solid #007bff;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .script-column {
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            line-height: 2;
+        }
+        .paragraph {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 4px;
+        }
+        .en {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+        .zh {
+            color: #555;
+            font-size: 0.95em;
+        }
+        .time-version {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2196f3;
+        }
+        .time-version h4 {
+            margin: 0 0 10px 0;
+            color: #1976d2;
+        }
+    </style>
+</head>
+<body>
+    <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+    <!-- Sidebar TOC -->
+    <div class="sidebar">
+        <h2>📑 目录</h2>
+        <a href="#prelude">Prelude: 开场</a>
+        <a href="#capstone">Capstone: Research Direction</a>
+        <a href="#module1">Module 1: Why HKU</a>
+        <a href="#module2">Module 2: Why Linguistics</a>
+        <a href="#common-questions">Common Interview Questions</a>
+        <div style="margin-left: 15px; font-size: 0.85em;">
+            <a href="#q-good-fit">• What makes you a good fit</a>
+            <a href="#q-courses">• Relevant undergraduate courses</a>
+            <a href="#q-why-ling">• Why linguistics vs applied</a>
+            <a href="#q-challenge">• Most challenging part</a>
+            <a href="#q-unfamiliar">• Unfamiliar term/question</a>
+            <a href="#q-future">• Future plan</a>
+            <a href="#q-bridge">• Bridge for unfamiliar theories</a>
+            <a href="#q-sisu">• SISU Training</a>
+        </div>
+        <a href="#module3">Module 3: Projects</a>
+        <div style="margin-left: 15px; font-size: 0.85em;">
+            <a href="#project-corporate">• Corporate Image Construction</a>
+            <a href="#project-lfg">• LFG 毕业论文</a>
+            <a href="#project-iflytek">• 科大讯飞</a>
+            <a href="#project-jilin">• 吉林非遗大创</a>
+            <a href="#project-cbl">• CBL 法律翻译</a>
+            <a href="#project-ai">• AI 教育 Duolingo</a>
+            <a href="#project-robot">• 巡逻机器人</a>
+            <a href="#project-un">• 联合国日内瓦</a>
+            <a href="#project-changchun">• 长春管委会</a>
+        </div>
+        <a href="#module4">Module 4: 反问环节</a>
+    </div>
+
+    <div class="container">
+        <h1>港大语言学面试准备稿 · Prelude + Module 1-3</h1>
+
+        <!-- Prelude -->
+        <div class="section" id="prelude">
+            <h2>Prelude: 开场</h2>
+
+            <h3>技术检查 + 自我介绍</h3>
+            
+                <div class="script-column">
+                    <div class="paragraph">
+                        <div class="en">Hello, professor. Can you hear me clearly? Can I hear you clearly?</div>
+                        <div class="zh">老师好。我能听清您的声音，您能听清我吗？</div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="en">It’s very nice to meet you. I’m <b><span style="color: #d32f2f;">Sun Zhihan</span></b>, majoring in <b><span style="color: #d32f2f;">English Language & Literature</span></b> with a specialization track in <b><span style="color: #d32f2f;">linguistics</span></b>. I’ve been <b><span style="color: #d32f2f;">preparing for linguistics</span></b> since my freshman year. I’m happy to take any questions you’d like to ask.</div>
+                        <div class="zh">很高兴见到您。我是<b><span style="color: #d32f2f;">孙芷涵</span></b>，<b><span style="color: #d32f2f;">英语语言文学</span></b>专业，主修模块是<b><span style="color: #d32f2f;">语言学</span></b>，从<b><span style="color: #d32f2f;">大一就开始为语言学方向做准备</span></b>。欢迎您提问。</div>
+                    </div>
+        </div>
+
+        <!-- Capstone: Research Direction -->
+        <div class="section" id="capstone">
+            <h2>Capstone: Research Direction</h2>
+
+            
+                <div class="script-column">
+                    <div class="paragraph">
+                        <div class="en">I want to look <b><span style="color: #d32f2f;">beyond the surface of language</span></b> to what lies behind it — not just social phenomena, but also <b><span style="color: #d32f2f;">human cognitive logic</span></b>. For my master's thesis and future PhD, I'll probably work on <b><span style="color: #d32f2f;">computational modeling of pragmatic inference</span></b>, like why humans sometimes <b><span style="color: #d32f2f;">say things they don't literally mean</span></b>. I hope my research can contribute something to the <b><span style="color: #d32f2f;">AI/NLP field</span></b>.</div>
+                        <div class="zh">我更想通过<b><span style="color: #d32f2f;">语言表层</span></b>看背后的东西，但不仅限于社会现象，还包括人的<b><span style="color: #d32f2f;">思维逻辑</span></b>。我硕士论文和未来 PhD 方向大概会做<b><span style="color: #d32f2f;">语用推理的计算建模</span></b>，比如为什么人类要<b><span style="color: #d32f2f;">"言不由衷"</span></b>？之后我希望我的研究能对 <b><span style="color: #d32f2f;">AI/NLP</span></b> 领域有些帮助。</div>
+                    </div>
+                    <div class="paragraph" style="background: #fff3e0; border-left: 4px solid #ff9800; padding: 15px; margin-top: 15px;">
+                        <div style="color: #e65100; font-size: 0.9em; margin-bottom: 8px; font-weight: bold;">🔥 追问准备：BERTopic 原理 + 连接语用推理</div>
+                        <div class="en" style="color: #333; line-height: 1.8;">
+                            <b><span style="color: #d32f2f;">What is BERTopic?</span></b> I roughly read a paper my advisor shared with me — it was an engineering PhD student's thesis. Basically, it <b><span style="color: #d32f2f;">converts documents into vectors</span></b> (like numerical representations), and then <b><span style="color: #d32f2f;">extracts topics</span></b> from these vectors by clustering similar documents together.
+                            <br><br>
+                            <b><span style="color: #d32f2f;">Connection to pragmatic inference:</span></b> In my discourse analysis paper, I used BERTopic to identify <b><span style="color: #d32f2f;">recurring discourse patterns</span></b> in job-seeking narratives. These patterns reveal how speakers <b><span style="color: #d32f2f;">implicitly convey meanings</span></b> beyond literal content — for example, using metaphors like "挂了" (hung up/failed) or "上岸" (made it ashore/succeeded) to construct identity and negotiate face. This is essentially <b><span style="color: #d32f2f;">pragmatic inference at scale</span></b>: computational methods help us discover systematic patterns in how people say things they don't literally mean.
+                        </div>
+                        <div class="zh" style="color: #333; line-height: 1.8;">
+                            <b><span style="color: #d32f2f;">BERTopic 是什么？</span></b>我大致看了一篇我导师分享给我的论文，是一篇工科博士的毕业论文。大概就是把<b><span style="color: #d32f2f;">documents 变成向量</span></b>（就是数值化的表示），然后再从这些向量里<b><span style="color: #d32f2f;">extract 出主题</span></b>，把相似的文档聚类在一起。
+                            <br><br>
+                            <b><span style="color: #d32f2f;">与语用推理的连接：</span></b>在我的话语分析论文中，我用 BERTopic 识别求职叙事中的<b><span style="color: #d32f2f;">反复出现的话语模式</span></b>。这些模式揭示了说话者如何<b><span style="color: #d32f2f;">隐含地传达字面内容之外的意义</span></b>——比如用"挂了""上岸"等隐喻来建构身份、协商面子。这本质上是<b><span style="color: #d32f2f;">大规模的语用推理</span></b>：计算方法帮助我们发现人们"言不由衷"的系统性模式。
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Module 1: Why HKU -->
+        <div class="section" id="module1">
+            <h2>Module 1: Why HKU</h2>
+
+            <h3>Faculty</h3>
+
+                <div class="script-column">
+                    <div class="paragraph">
+                        <div class="en">Actually, back in my <b><span style="color: #d32f2f;">sophomore year</span></b> I saw <b><span style="color: #d32f2f;">Prof. Christophe Coupé’s</span></b> research on the HKU website — his work on approaching linguistic issues with data science tools. I planned even then to get to know him if I had the chance. Since then, though, my interests have expanded. I’m also very interested in <b><span style="color: #d32f2f;">Dr. May Wong’s</span></b> corpus-based work on <b><span style="color: #d32f2f;">World Englishes and discourse</span></b>. To be honest, I still haven’t decided whether I want to go the functional linguistics route or the theoretical one, just like my <b><span style="color: #d32f2f;">two papers in progress actually cover both</span></b>. I <b><span style="color: #d32f2f;">love linguistics too much</span></b> to lock myself into one direction prematurely. So I plan to decide after actually engaging with HKU faculty and getting a deeper sense of frontier research. I feel I still have time to think — and that <b><span style="color: #d32f2f;">intellectual space</span></b> is precisely what HKU’s MA can give me.</div>
+                        <div class="zh">其实我<b><span style="color: #d32f2f;">大二</span></b>的时候就在港大官网上看到了<b><span style="color: #d32f2f;">Prof. Christophe Coupé</span></b>的研究方向——他做的"用数据科学工具处理语言学问题"那一路，当时我就打算有机会要认识一下他。不过到现在，我的兴趣又扩展了。我对<b><span style="color: #d32f2f;">Dr. May Wong</span></b>的<b><span style="color: #d32f2f;">corpus-based World Englishes 和 discourse</span></b>研究也非常感兴趣。说实话，我到现在也没太想好以后是走功能语言学那边还是理论那边，就像我<b><span style="color: #d32f2f;">两篇在写的论文其实两条路都覆盖了</span></b>。我对语言学<b><span style="color: #d32f2f;">实在太喜欢</span></b>，不急着把自己锁死在某一个方向上。所以我打算等真正和港大的老师接触、更深入地了解前沿研究之后再做判断。我觉得目前来看我还有思考的时间，而这个<b><span style="color: #d32f2f;">空间</span></b>正是港大的 MA 能给我的。</div>
+                    </div>
+                </div>
+
+            <h3>课程</h3>
+
+                <div class="script-column">
+                    <div class="paragraph">
+                        <div class="en">Plus, another consideration is how well the <b><span style="color: #d32f2f;">curriculum matches my research plan</span></b>, and how closely the faculty’s work aligns with my interests. I’m interested in courses like Phonetics & Phonology, Pragmatics, and Cognitive Linguistics, and I would especially like to take <b><span style="color: #d32f2f;">Sociolinguistics, Linguistic Diversity in China, and Data Science for Linguists</span></b>.</div>
+                        <div class="zh">另外，<b><span style="color: #d32f2f;">课程设置和我研究计划的匹配度</span></b>，以及系里老师的研究方向和我的兴趣有多接近，也是我的考虑因素。我感兴趣的课程包括 Phonetics & Phonology、Pragmatics 和 Cognitive Linguistics，尤其想修 <b><span style="color: #d32f2f;">Sociolinguistics、Linguistic Diversity in China 和 Data Science for Linguists</span></b>。</div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="en">Of course, <b><span style="color: #d32f2f;">ranking</span></b> is also a reason — its leading position in Asia is there, and I don’t shy away from that judgment.</div>
+                        <div class="zh">当然，<b><span style="color: #d32f2f;">排名</span></b>也是一个原因——港大在亚洲的领先地位摆在那里，我不回避这个判断。</div>
+                    </div>
+                    <div class="paragraph" style="background: #f5f5f5; border-left: 3px solid #ccc; padding: 15px; margin-top: 10px;">
+                        <div style="color: #888; font-size: 0.85em; margin-bottom: 8px;">⚠️ 被追问才说 / Only say if asked:</div>
+                        <div class="en" style="color: #666;">Sociolinguistics builds theoretical foundations, Linguistic Diversity in China addresses the World Englishes issue I encountered at iFlytek, and Data Science for Linguists upgrades my existing Python and corpus experience into rigorous research methodology. Together these three are part of my PhD foundation.</div>
+                        <div class="zh" style="color: #666;">Sociolinguistics 补理论骨架，Linguistic Diversity in China 对应我在科大讯飞撞上的 World Englishes 问题，Data Science for Linguists 把我已有的 Python 和语料库经验升级成严谨的研究方法。这三门合起来是 PhD 地基的一部分。</div>
+                    </div>
+                </div>
+        </div>
+
+
+        <!-- Module 2: Why Linguistics -->
+        <div class="section" id="module2">
+            <h2>Module 2: Why Linguistics</h2>
+
+            <div class="script-column">
+                <div class="paragraph">
+                    <div class="en">First, my undergraduate studies built a <b><span style="color: #d32f2f;">solid foundation</span></b> — I took courses like Phonetics, Phonology, Syntax, Semantics, Pragmatics, and Discourse Analysis. Second, I've had <b><span style="color: #d32f2f;">exploratory experiences</span></b> through various projects, which helped me understand what I truly enjoy.</div>
+                    <div class="zh">首先，我本科阶段的学习<b><span style="color: #d32f2f;">奠定了基础</span></b>——我修读了语音学、音系学、句法学、语义学、语用学、话语分析等课程。其次，我通过各种项目有了<b><span style="color: #d32f2f;">探索的经历</span></b>，这让我知道自己真正喜欢什么。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Common Interview Questions -->
+        <div class="section" id="common-questions">
+            <h2>Common Interview Questions</h2>
+
+            <h3 id="q-good-fit">What makes you a good fit for this programme?（为什么选择你、你为什么合适、为什么让我们选择你）</h3>
+            <div class="script-column">
+                <div class="paragraph">
+                    <div class="en">I would highlight three things. First, I have built a <b><span style="color: #d32f2f;">systematic foundation in linguistics</span></b> through courses in phonetics, phonology, syntax, semantics, pragmatics, discourse analysis, and language and society. Second, I have already carried out several <b><span style="color: #d32f2f;">research projects</span></b>, including my LFG-based phonology thesis and a computational discourse-analysis paper. Third, I have practical experience with <b><span style="color: #d32f2f;">corpora, Python, NLP tools, and speech data</span></b>. So I already have both the academic foundation and the exploratory experience to benefit from postgraduate training.</div>
+                    <div class="zh">我会强调三点。第一，我通过语音学、音系学、句法学、语义学、语用学、话语分析和语言与社会等课程，建立了<b><span style="color: #d32f2f;">系统的语言学基础</span></b>。第二，我已经做过几项<b><span style="color: #d32f2f;">研究项目</span></b>，包括 LFG 框架下的毕业论文和计算话语分析论文。第三，我有使用<b><span style="color: #d32f2f;">语料库、Python、NLP 工具和语音数据</span></b>的实践经验。所以我既有学术基础，也有探索经验，能够充分利用研究生阶段的训练。</div>
+                </div>
+            </div>
+
+            <h3 id="q-courses">Relevant undergraduate courses（你本科上过什么相关课程）</h3>
+            <div class="script-column">
+                <div class="paragraph">
+                    <div class="en">Yes. I have taken a <b><span style="color: #d32f2f;">systematic set of linguistics courses</span></b>, including Introduction to Linguistics, Phonology, Syntax, Semantics, Pragmatics, Discourse Analysis, and Language and Society. For example, Syntax and Semantics trained me to analyse formal structure and meaning, while Pragmatics and Discourse Analysis trained me to examine context, inference, and language use. Together, these courses gave me a foundation in both <b>qualitative analysis</b> and <b>quantitative, corpus-based research</b>.</div>
+                    <div class="zh">有。我系统修读了<b><span style="color: #d32f2f;">一组语言学课程</span></b>，包括语言学概论、音系学、句法学、语义学、语用学、话语分析和语言与社会。比如句法学和语义学训练了我分析形式结构和意义，语用学和话语分析训练了我考察语境、推理和语言使用。这些课程共同让我具备了<b>定性分析</b>以及<b>定量、语料库研究</b>的基础。</div>
+                </div>
+            </div>
+
+            <h3 id="q-why-ling">Why linguistics rather than applied linguistics?（为什么选语言学而不是应用语言学）</h3>
+            <div class="script-column">
+                <div class="paragraph">
+                    <div class="en">My understanding is that <b><span style="color: #d32f2f;">general linguistics treats language itself as the object of study</span></b> — its sound system, grammar, meaning, use, and cognitive basis. Applied linguistics is more concerned with how knowledge about language can address practical problems such as language teaching, acquisition, assessment, or language-related difficulties. The two fields overlap, especially in their use of corpora and experiments, but my current interest is closer to understanding how the language system itself works. For example, before evaluating an AI language product or an educational application, I think we first need to understand the linguistic system and the mechanisms of language use. Since I plan to pursue a PhD, general linguistics is a better fit for my current direction.</div>
+                    <div class="zh">我的理解是，<b><span style="color: #d32f2f;">普通语言学把语言本身作为研究对象</span></b>，研究它的语音系统、语法、意义、使用方式和认知基础；应用语言学则更关注如何利用语言知识解决语言教学、习得、测评或语言障碍等现实问题。两者会重叠，比如都可以使用语料库和实验方法，但我目前更关心语言系统本身如何运作。例如，在评价一个 AI 语言产品或教育应用之前，我认为首先要理解语言系统和语言使用机制。因为我计划读博，普通语言学更符合我目前的方向。</div>
+                </div>
+            </div>
+
+            <h3 id="q-challenge">What was the most challenging part of your research?（研究中最困难的部分是什么）</h3>
+            <div class="script-column">
+                <div class="paragraph">
+                    <div class="en"><b>Situation:</b> During my iFlytek internship, I was asked to evaluate synthesised English speech across different varieties. My mentor thought I was identifying too many errors and applying the standard too strictly. <b>Task:</b> I needed to determine whether my judgments reflected genuine problems or legitimate variation. <b>Action:</b> I explained my reasoning, consulted research on the relevant variety, checked expressions used by foreign car companies, and compared the speech with COCA and BNC. <b>Result:</b> I became more confident in defending evidence-based judgments, and I noticed a relatively under-researched intonation pattern that later became the topic of my graduation thesis.</div>
+                    <div class="zh"><b>情境：</b>在科大讯飞实习时，我需要评估不同英语变体的合成语音。我的 mentor 认为我找出的错误太多、标准太严格。<b>任务：</b>我需要判断这些问题是真实的质量问题，还是合理的语言变异。<b>行动：</b>我解释自己的判断，查阅相关变体的研究，查外国车企的表达，并用 COCA 和 BNC 做对比。<b>结果：</b>我更有信心为基于证据的判断辩护，也发现了一个相对缺乏研究的语调模式，后来把它发展成了毕业论文选题。</div>
+                </div>
+            </div>
+
+            <h3 id="q-unfamiliar">If you encounter an unfamiliar term or question（遇到不熟悉的术语或问题怎么办）</h3>
+            <div class="script-column">
+                <div class="paragraph">
+                    <div class="en">That’s a good question. I haven’t looked at that concept systematically, but based on what I know, I would connect it to <b><span style="color: #d32f2f;">[a related concept or example from my research]</span></b>. My tentative understanding is ..., although I would need to read the relevant literature before making a definite claim.</div>
+                    <div class="zh">这是一个很好的问题。我还没有系统地研究过这个概念，但基于我目前的知识，我会把它和<b><span style="color: #d32f2f;">[自己研究中的相关概念或例子]</span></b>联系起来。我的初步理解是……不过在下定论之前，我还需要阅读相关文献。</div>
+                </div>
+            </div>
+
+            <h3 id="q-future">Future academic and career plan（未来学术和职业规划）</h3>
+            <div class="script-column">
+                <div class="paragraph">
+                    <div class="en">My long-term plan is to pursue a <b><span style="color: #d32f2f;">PhD in linguistics</span></b>, either in Hong Kong or elsewhere. I have not fixed one narrow subfield yet, because I want the MA year to help me compare theoretical and functional approaches and identify the right research question and supervisor. At present, I am particularly interested in computational modelling or analysis of pragmatic inference, and in how linguistic research can contribute to AI and language technology. In the long term, I hope to become a <b>full-time researcher</b>, contributing to the field through peer-reviewed publications and active participation in international conferences. I also want to <b>maintain close ties with industry</b>, particularly in roles that bridge the gap between linguistic theory and practical applications — for example, working as a technical consultant for companies developing intelligent devices or applications, ensuring that linguistic insights are properly integrated into product design.</div>
+                    <div class="zh">我的长期计划是读<b><span style="color: #d32f2f;">语言学博士</span></b>，地点可能在香港，也可能在其他地方。我还没有把自己锁定在一个非常窄的方向上，因为我希望通过硕士阶段比较理论和功能两种路径，找到真正适合自己的研究问题和导师。目前我尤其对语用推理的计算建模或计算分析，以及语言学研究如何帮助 AI 和语言技术感兴趣。长期来看，我希望成为<b>全职研究者</b>，通过同行评审论文和国际会议参与为领域做出贡献。我也希望<b>保持和业界的紧密联系</b>，特别是在语言学理论和实际应用之间架起桥梁的角色——例如为开发智能设备或应用的公司担任技术顾问，确保语言学洞见被正确地整合到产品设计中。</div>
+                </div>
+            </div>
+
+            <h3 id="q-bridge">Useful bridge for unfamiliar theories（应对不熟悉理论的通用桥接话术）</h3>
+            <div class="script-column">
+                <div class="paragraph">
+                    <div class="en">I have not formally specialised in second-language acquisition, so I would not want to overstate my knowledge. But I can relate a new theory to my existing background in <b>language learning, linguistic structure, and empirical research</b>, and explain how I would approach the literature systematically.</div>
+                    <div class="zh">我没有正式专攻二语习得，所以不想夸大自己的知识。但我可以把新理论和自己已有的<b>语言学习、语言结构和实证研究</b>背景联系起来，并说明我会如何系统地阅读相关文献。</div>
+                </div>
+            </div>
+
+            <h3 id="q-sisu">SISU Training: 上外培训经历如何连接到项目（上外培训经历）</h3>
+            <div class="script-column">
+                <div class="paragraph">
+                    <div class="en"><b>What did I learn from SISU training?</b> From the <b>Language Data Science micro-programme</b> (Jul 2025), I learned the basic workflow of applying <b>Python and NLP tools</b> to language data, and the core principles of <b>LLMs and machine learning</b>. I also studied language database development and digital-humanities methods. From the <b>Corpus Linguistics Workshop</b> (Nov 2025), I surveyed frontier corpus-linguistics methods including <b>corpus-assisted discourse analysis</b>, learner-language research, and textual complexity analysis. I completed hands-on training with <b>LancsBox</b>, covering corpus annotation and retrieval.
+                    <br><br>
+                    <b>How does this connect to my projects?</b> These training experiences built my <b>methodological foundation</b>. For example, the Python and NLP skills I learned at SISU directly enabled me to crawl and build my own corpus for the Corporate Image Construction paper. The corpus linguistics methods helped me design the annotation scheme for my LFG thesis. Without this training, I wouldn't have been able to independently complete the computational part of my research.</div>
+                    <div class="zh"><b>我从上外培训中学到了什么？</b>从<b>语言数据科学微专业</b>（2025 年 7 月），我学到了将 <b>Python 和 NLP 工具</b>应用于语言数据的基本工作流程，以及<b>大语言模型和机器学习</b>的核心原理。我还学习了语言数据库开发和数字人文方法。从<b>语料库语言学工作坊</b>（2025 年 11 月），我了解了前沿的语料库语言学方法，包括<b>语料库辅助话语分析</b>、学习者语言研究和文本复杂度分析。我完成了 <b>LancsBox</b> 的实操训练，涵盖语料库标注和检索。
+                    <br><br>
+                    <b>这如何连接到我的项目？</b>这些培训经历建立了我的<b>方法论基础</b>。例如，我在上外学到的 Python 和 NLP 技能使我能够为大厂话语分析论文爬取并构建自己的语料库。语料库语言学方法帮助我为 LFG 论文设计标注方案。没有这些培训，我无法独立完成研究的计算部分。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module 3: Projects -->
+        <div class="section" id="module3">
+            <h2>Module 3: Projects</h2>
+
+            <!-- Corporate Image Construction -->
+            <h3 id="project-corporate">Corporate Image Construction (深讲主力)</h3>
+
+            <div class="time-version">
+                <h4>30s version</h4>
+            </div>
+            
+                <div class="script-column">
+                    <div class="paragraph">
+                        <div class="en">Besides my graduation thesis, I have another paper in progress, developed from a course paper, using <b><span style="color: #d32f2f;">BERTopic</span></b> and <b><span style="color: #d32f2f;">Appraisal Theory</span></b> for <b><span style="color: #d32f2f;">critical discourse analysis</span></b>, studying <b><span style="color: #d32f2f;">corporate image construction</span></b> in <b><span style="color: #d32f2f;">job interview narratives on social media</span></b> — focusing mainly on <b><span style="color: #d32f2f;">big-tech-related topics</span></b>. The starting point was my observation that in <b><span style="color: #d32f2f;">big-tech recruitment contexts</span></b>, vocabulary like "<b><span style="color: #d32f2f;">failed</span></b>", "<b><span style="color: #d32f2f;">screwed</span></b>", "<b><span style="color: #d32f2f;">made it ashore</span></b>" is highly uniform, job-seekers widely position themselves as <b><span style="color: #d32f2f;">passive recipients</span></b>, and comments don't question <b><span style="color: #d32f2f;">recruiters' evaluation criteria</span></b> — only refine interview tips. A <b><span style="color: #d32f2f;">self-reinforcing evaluative discourse system</span></b>. The big-tech recruitment context <b><span style="color: #d32f2f;">amplifies this discursive power structure</span></b>, which is why I focus on big tech.</div>
+                        <div class="zh">除了毕业论文，我还有一篇在写的论文，基于课程论文改进，用<b><span style="color: #d32f2f;">BERTopic</span></b> 和<b><span style="color: #d32f2f;">评价理论</span></b>做<b><span style="color: #d32f2f;">批评话语分析</span></b>，研究社交媒体上——主要是<b><span style="color: #d32f2f;">大厂相关话题</span></b>——的<b><span style="color: #d32f2f;">求职面试叙事中的企业形象建构</span></b>。起因是我观察到大厂求职语境里，"<b><span style="color: #d32f2f;">挂了</span></b>""<b><span style="color: #d32f2f;">凉了</span></b>""<b><span style="color: #d32f2f;">上岸</span></b>"这类词汇高度一致，求职者普遍把自己放在<b><span style="color: #d32f2f;">被动承受者</span></b>位置，评论区也不质疑<b><span style="color: #d32f2f;">招聘方的评估标准</span></b>，只完善面试技巧——形成了一套<b><span style="color: #d32f2f;">自我强化的评价话语体系</span></b>。大厂的招聘语境<b><span style="color: #d32f2f;">把这种话语权力结构放大了</span></b>，所以我聚焦大厂。</div>
+            </div>
+        </div>
+
+            <div class="time-version">
+                <h4>60s version (主力版本)</h4>
+            </div>
+            
+                <div class="script-column">
+                    <div class="paragraph">
+                        <div class="en">Methodologically, my corpus is approximately <b><span style="color: #d32f2f;">22 million Chinese characters</span></b> across two platforms — <b><span style="color: #d32f2f;">Zhihu's long-form answers</span></b> and <b><span style="color: #d32f2f;">Weibo's short-form posts</span></b> — spanning five years from <b><span style="color: #d32f2f;">2021 to 2026</span></b>. I use <b><span style="color: #d32f2f;">BERTopic</span></b> for topic modelling to identify stable discourse topics, and <b><span style="color: #d32f2f;">Martin's Appraisal Theory</span></b> for fine-grained qualitative analysis of these topics. I had originally drawn on <b><span style="color: #d32f2f;">Fairclough's three-dimensional framework</span></b>, but my advisor suggested I <b><span style="color: #d32f2f;">background CDA</span></b> rather than treat it as a theoretical framework — otherwise the theoretical layering becomes too crowded.</div>
+                        <div class="zh">方法上，我的语料大约<b><span style="color: #d32f2f;">2200 万汉字</span></b>，来自两个平台——<b><span style="color: #d32f2f;">知乎的长文回答</span></b>和<b><span style="color: #d32f2f;">微博的短文帖子</span></b>——覆盖 <b><span style="color: #d32f2f;">2021 到 2026</span></b> 五年。我用 <b><span style="color: #d32f2f;">BERTopic</span></b> 对语料做主题建模，识别出稳定的话语议题；用 <b><span style="color: #d32f2f;">Martin 的评价理论</span></b>对这些议题做细致的质性分析。我原本还用了 <b><span style="color: #d32f2f;">Fairclough 的三维框架</span></b>，但导师建议我把 <b><span style="color: #d32f2f;">CDA 背景化</span></b>而不是作为理论框架——不然理论层确实太杂了。</div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="en">The methodological contribution of this paper is: genuinely integrating computational methods with critical discourse analysis, not just layering them. Traditional CDA is often questioned for "representativeness" due to small samples. I use BERTopic to do topic modelling on large-scale corpus first, identifying stable discourse topics, then apply Appraisal Theory for fine-grained qualitative analysis on those topics. This preserves CDA's critical edge on power relations while gaining the scale support that computational methods provide.</div>
+                        <div class="zh">这篇论文的方法论贡献在于：把计算方法和批评话语分析真正结合起来，而不是两张皮。传统 CDA 常因为样本小而受到"代表性"的质疑，而我用 BERTopic 先在大规模语料上做主题建模，识别出稳定的话语议题，再用评价理论对这些议题做细致的质性分析。这样既保留了 CDA 对权力关系的批判锋芒，又有了计算方法带来的规模支撑。</div>
+                    </div>
+                    <div class="paragraph" style="background: #fff3e0; border-left: 4px solid #ff9800; padding: 15px; margin-top: 15px;">
+                        <div style="color: #e65100; font-size: 0.9em; margin-bottom: 8px; font-weight: bold;">🔥 追问准备：Martin's Appraisal Theory</div>
+                        <div class="en" style="color: #333; line-height: 1.8;">
+                            To be honest, I haven't finished reading Martin's original text yet. But roughly, Appraisal Theory includes <b><span style="color: #d32f2f;">three main systems</span></b>: <b>Attitude</b> (how we express feelings and judgments), <b>Engagement</b> (how we manage different voices and perspectives), and <b>Graduation</b> (how we scale up or down the intensity). I plan to use <b><span style="color: #d32f2f;">LLMs to help with annotation</span></b>, and then look at the <b><span style="color: #d32f2f;">statistical distribution</span></b> of these appraisal resources and <b><span style="color: #d32f2f;">how they are used</span></b> in different contexts.
+                        </div>
+                        <div class="zh" style="color: #333; line-height: 1.8;">
+                            说实话，Martin 的原文我还没看完。但大致上，评价理论包括<b><span style="color: #d32f2f;">三个主要系统</span></b>：<b>Attitude</b>（态度和判断）、<b>Engagement</b>（多声管理）、<b>Graduation</b>（级差）。我打算用<b><span style="color: #d32f2f;">大语言模型来辅助做标注</span></b>，然后看它们在<b><span style="color: #d32f2f;">统计层面的分布</span></b>以及<b><span style="color: #d32f2f;">如何被使用</span></b>的。
+                        </div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="en">This paper matters to me because I see it as using a <b><span style="color: #d32f2f;">relatively mature methodological approach</span></b> to independently solve a <b><span style="color: #d32f2f;">real social problem</span></b> I encountered myself — a problem I discovered when I was <b><span style="color: #d32f2f;">looking for internships</span></b>.</div>
+                        <div class="zh">这篇论文对我的意义在于，我觉得这是我用一个<b><span style="color: #d32f2f;">相对比较成熟的方法</span></b>独立解决自己遇到的<b><span style="color: #d32f2f;">现实社会问题</span></b>——这个问题是我自己在<b><span style="color: #d32f2f;">找实习的时候</span></b>发现的。</div>
+            </div>
+        </div>
+
+            <div class="time-version">
+                <h4>90s version (如面试官想多听)</h4>
+            </div>
+            
+                <div class="script-column">
+                    <div class="paragraph">
+                        <div class="en">[60s version] + In my initial manual browsing of the posts, I mapped out the identity construction relationships.</div>
+                        <div class="zh">[60s 版本] + 我在初步人工浏览帖子的时候，梳理出了身份建构的关系。</div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="en"><b><span style="color: #d32f2f;">So, who creates the image of big tech?</span></b> It is not just the companies themselves. <b>Job-seekers</b> also play an important role. When they talk about management and workplace systems, they may describe a company as <b>chaotic, efficient, or fair</b>. People in the <b>comment sections</b> may then challenge these descriptions. They may question the <b>authority of big tech</b> and point out its problems. <b>Recruitment agencies and referral accounts</b> also shape this image. Because they want to attract applicants, they often present big tech as an <b><span style="color: #d32f2f;">ideal career destination</span></b>. In other words, the image of big tech is created by several groups: job-seekers, online commentators, recruiters, and referral accounts.</div>
+                        <div class="zh"><b><span style="color: #d32f2f;">那么，谁在塑造大厂形象？</span></b>不仅仅是公司自己。<b>求职者</b>也扮演重要角色。当他们谈论管理制度和工作体系时，可能会把公司描述为<b>混乱的、高效的或公平的</b>。<b>评论区</b>的人随后可能会挑战这些描述，质疑<b>大厂的权威</b>，指出其问题。<b>招聘中介和内推账号</b>也在塑造这个形象。因为他们想吸引求职者，所以经常把大厂呈现为<b><span style="color: #d32f2f;">理想的职业目的地</span></b>。换句话说，大厂形象是由多个群体共同创造的：求职者、网络评论者、招聘方和内推账号。</div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="en"><b><span style="color: #d32f2f;">Now, who creates the image of job-seekers?</span></b> <b>Recruiters and big-tech companies</b> often present job-seekers as <b>people who need to be evaluated</b>. Through <b>application requirements, interviews, and HR language</b>, they may also label some candidates as <b>unqualified or incompetent</b>. Job-seekers may then <b>adopt this way of thinking about themselves</b>. For example, someone might say, "I didn't prepare well enough," and see themselves as someone who needs to improve. <b>Peers and people who share their job-hunting experiences</b> also shape this image. They often present job-seekers as people who need to learn <b>how the recruitment system works</b>. The <b>comment section</b> can influence this process too. Some people agree with these evaluations, while others challenge them. So, the image of the job-seeker is also created through <b><span style="color: #d32f2f;">interaction among companies, recruiters, job-seekers, peers, and online commenters</span></b>.</div>
+                        <div class="zh"><b><span style="color: #d32f2f;">那么，谁在塑造求职者形象？</span></b><b>招聘方和大厂</b>经常把求职者呈现为<b>需要被评估的人</b>。通过<b>申请要求、面试和 HR 话术</b>，他们可能还会给一些候选人贴上<b>不合格或能力不足</b>的标签。求职者随后可能会<b>接受这种看待自己的方式</b>。例如，有人可能会说"我准备得不够充分"，把自己视为需要改进的人。<b>同侪和分享求职经验的人</b>也在塑造这个形象。他们经常把求职者呈现为需要学习<b>招聘系统如何运作</b>的人。<b>评论区</b>也会影响这个过程。有些人认同这些评价，有些人则提出质疑。所以，求职者形象也是通过<b><span style="color: #d32f2f;">公司、招聘方、求职者、同侪和网络评论者之间的互动</span></b>共同创造的。</div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="en">However, given the paper's length constraints, my advisor suggested I <b><span style="color: #d32f2f;">focus only on job-seekers' main posts</span></b> and set aside comment sections and posts from other stances for now — which I think is a <b><span style="color: #d32f2f;">reasonable decision</span></b>.</div>
+                        <div class="zh">但鉴于论文篇幅，导师建议我就<b><span style="color: #d32f2f;">聚焦于求职者的发帖正文</span></b>，评论区和其他立场的帖子先不看——我认为这<b><span style="color: #d32f2f;">很合理</span></b>。</div>
+            </div>
+        </div>
+
+            <!-- LFG Thesis -->
+            <h3 id="project-lfg">LFG 毕业论文 (45s)</h3>
+            
+                <div class="script-column">
+                    <div class="paragraph">
+                        <div class="en">My graduation thesis is a <b><span style="color: #d32f2f;">corpus-based study</span></b> of <b><span style="color: #d32f2f;">intonation patterns</span></b> of <b><span style="color: #d32f2f;">list-final items followed by "but"</span></b> under the <b><span style="color: #d32f2f;">LFG (Lexical Functional Grammar) parallel architecture</span></b>. For example, take a real sentence from my corpus: "<b><span style="color: #d32f2f;">Well, I count my iPod, cellphone and computer as technology but this has nothing to do with that.</span></b>" My thesis investigates <b><span style="color: #d32f2f;">what intonation pattern is used on "computer"</span></b> — the list-final item before "but".</div>
+                        <div class="zh">我的毕业论文是在<b><span style="color: #d32f2f;">LFG（词汇功能语法）平行架构</span></b>下，用<b><span style="color: #d32f2f;">语料库方法</span></b>研究<b><span style="color: #d32f2f;">list-final items followed by "but" 的语调模式</span></b>。比如我语料库里真实的一句话："<b><span style="color: #d32f2f;">Well, I count my iPod, cellphone and computer as technology but this has nothing to do with that.</span></b>" 我论文研究的就是<b><span style="color: #d32f2f;">"computer" 这个 list-final item 用什么语调</span></b>。</div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="en">Methodologically, I used <b><span style="color: #d32f2f;">two corpora</span></b> in a <b><span style="color: #d32f2f;">dual-design</span></b>: <b><span style="color: #d32f2f;">Santa Barbara Corpus of Spoken American English</span></b> (<b><span style="color: #d32f2f;">SBCSAE</span></b>; Du Bois et al., 2000-2005, manually extracted and annotated) and <b><span style="color: #d32f2f;">Prosodically Annotated TED Talks</span></b> (<b><span style="color: #d32f2f;">PANTED</span></b>; Öktem et al., 2018, more items, providing statistical power). On my <b><span style="color: #d32f2f;">advisor's suggestion</span></b>, I also used the <b><span style="color: #d32f2f;">ToBI annotation system</span></b> to <b><span style="color: #d32f2f;">enhance academic rigor</span></b>.</div>
+                        <div class="zh">方法上，我用了<b><span style="color: #d32f2f;">双库设计</span></b>：<b><span style="color: #d32f2f;">Santa Barbara 口语美式英语语料库</span></b>（<b><span style="color: #d32f2f;">SBCSAE</span></b>；Du Bois 等，2000-2005，人工提取和标注）和<b><span style="color: #d32f2f;">Prosodically Annotated TED Talks</span></b>（<b><span style="color: #d32f2f;">PANTED</span></b>；Öktem 等，2018，更多条目，提供统计效力）。在<b><span style="color: #d32f2f;">导师的建议</span></b>下，我还使用了<b><span style="color: #d32f2f;">ToBI 标注系统</span></b>来<b><span style="color: #d32f2f;">提升学术规范性</span></b>。</div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="en">This connects to a <b><span style="color: #d32f2f;">very timely methodological challenge</span></b> — a recent paper by <b><span style="color: #d32f2f;">Dr. Zhihao Wang and Prof. Youngah Do at HKU</span></b> (2026, <i>Journal of East Asian Linguistics</i>) addresses exactly the problem of <b><span style="color: #d32f2f;">identifying level tones in actual speech production</span></b>. In my own research, I <b><span style="color: #d32f2f;">encountered this problem</span></b>: I marked words that <b><span style="color: #d32f2f;">perceptually sounded like level tones</span></b>, using them as <b><span style="color: #d32f2f;">markers of semantic incompleteness</span></b>.</div>
+                        <div class="zh">这连接到一个<b><span style="color: #d32f2f;">非常及时的方法论难题</span></b>——港大<b><span style="color: #d32f2f;">Dr. Zhihao Wang 和 Prof. Youngah Do</span></b>最近的一篇论文（2026，<i>Journal of East Asian Linguistics</i>）正好探讨了<b><span style="color: #d32f2f;">实际语音中识别平调的难题</span></b>。我自己的研究也<b><span style="color: #d32f2f;">遇到了这个问题</span></b>：我标出了<b><span style="color: #d32f2f;">听感上像平调的词</span></b>，把它们作为<b><span style="color: #d32f2f;">语义未完结的标志</span></b>。</div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="en">This phonology work represents one methodological direction for me — qualitative analysis using <b><span style="color: #d32f2f;">established spoken corpora</span></b>. I'm also exploring a <b><span style="color: #d32f2f;">computational approach</span></b> in another in-progress paper on discourse analysis, where I <b><span style="color: #d32f2f;">crawled and built my own corpus</span></b> from social media platforms, using BERTopic and Appraisal Theory to study...</div>
+                        <div class="zh">这代表了我的一个方法论方向——使用<b><span style="color: #d32f2f;">现成口语语料库</span></b>做定性分析。我也在另一篇在写论文中探索<b><span style="color: #d32f2f;">计算方法</span></b>，<b><span style="color: #d32f2f;">自己从社交媒体爬取并构建语料</span></b>，用 BERTopic 和评价理论做话语分析...</div>
+            </div>
+        </div>
+
+            <!-- iFlytek -->
+            <h3 id="project-iflytek">科大讯飞 (60s 大幅刷新版)</h3>
+            
+                <div class="script-column">
+                    <div class="paragraph">
+                        <div class="en">I work in iFlytek's <b><span style="color: #d32f2f;">Audio-Video Generation Resources Department</span></b> doing <b><span style="color: #d32f2f;">speech data work</span></b> in two main areas: translating English documents for the in-car voice assistant and establishing terminology consistency standards; <b><span style="color: #d32f2f;">quality-checking machine-synthesised English speech</span></b>.</div>
+                        <div class="zh">我在科大讯飞<b><span style="color: #d32f2f;">音视频生成资源部</span></b>做<b><span style="color: #d32f2f;">语音数据相关工作</span></b>，主要两块：给车载语音助手翻译英文文档、建立术语一致性规范；做<b><span style="color: #d32f2f;">机器合成英语语音的质检</span></b>。</div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="en">The QA side is most interesting. I systematically assess deviation between synthesised and natural speech at <b><span style="color: #d32f2f;">segmental and suprasegmental levels</span></b>. The work later expanded to <b><span style="color: #d32f2f;">Singapore English and Australian English</span></b>, forcing me outside the AmE/BrE standard framework.</div>
+                        <div class="zh">质检这块最有意思。我需要从<b><span style="color: #d32f2f;">段级和超音段级</span></b>系统评估合成语音和自然语音的偏差。后来工作范围扩到<b><span style="color: #d32f2f;">新加坡英语和澳洲英语</span></b>，要求我跳出美英音的标准框架。</div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="en">
+                            <span style="color: #888;">At the beginning, my mentor frequently challenged me — she thought I was finding too many errors, being too strict, no one had found this many before. I explained my reasoning, found literature to justify whether a phonetic phenomenon was legitimate, checked foreign car companies' expressions, consulted COCA and BNC corpora.</span>
+                        </div>
+                        <div class="zh">
+                            <span style="color: #888;">一开始我 mentor 经常质疑我——她觉得我找的错误太多、测评标准太严，之前从没人找出过这么多错。我就把理由说给她、找文献证明这种语音现象的合理性或不合理，查外国车企的表述、查 COCA 和 BNC 语料库。</span>
+                        </div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="en">The biggest by-product of this experience: I discovered a <b><span style="color: #d32f2f;">phonetic phenomenon</span></b> that almost no existing literature has studied. <b><span style="color: #d32f2f;">Through discussions with my mentor and further research</span></b>, I confirmed it and made it my <b><span style="color: #d32f2f;">graduation thesis topic</span></b> — studying intonation patterns of list-final items followed by "but" under the LFG framework.</div>
+                        <div class="zh">这段经历最大的副产品是：我发现了一个<b><span style="color: #d32f2f;">语音现象</span></b>在现有文献里几乎没人研究过。<b><span style="color: #d32f2f;">在和 mentor 讨论和调研的过程中</span></b>，我确认了这一点，于是把它作为了<b><span style="color: #d32f2f;">毕业论文选题</span></b>——就是在 LFG 框架下研究 list-final items followed by "but" 的语调模式。</div>
+                    </div>
+                    <div class="paragraph" style="background: #f5f5f5; border-left: 3px solid #ccc; padding: 15px; margin-top: 10px;">
+                        <div style="color: #888; font-size: 0.85em; margin-bottom: 8px;">⚠️ 被追问才说 / Only say if asked:</div>
+                        <div class="en" style="color: #666;"><b><span style="color: #d32f2f;">How did you specifically evaluate?</span></b> I assessed <b><span style="color: #d32f2f;">word pronunciation accuracy</span></b>, <b><span style="color: #d32f2f;">intonation</span></b> (sentence-medial and sentence-final), <b><span style="color: #d32f2f;">rhythm and pauses</span></b> including speech rate, and <b><span style="color: #d32f2f;">errors caused by numbers, abbreviations, pinyin words, dates</span></b>, and similar items.</div>
+                        <div class="zh" style="color: #666;"><b><span style="color: #d32f2f;">具体怎么测评？</span></b>我评估了<b><span style="color: #d32f2f;">单词发音准确性</span></b>、<b><span style="color: #d32f2f;">语调</span></b>（句中句末）、<b><span style="color: #d32f2f;">韵律停顿</span></b>（包括语速），以及<b><span style="color: #d32f2f;">数字、缩略词、拼音词、日期</span></b>等导致的读错。</div>
+            </div>
+        </div>
+
+            <!-- Jilin ICH -->
+            <h3 id="project-jilin">吉林非遗大创 (60s 大幅改写版)</h3>
+            
+                <div class="script-column">
+                    <div class="paragraph">
+                        <div class="en">I initiated this project in my <b><span style="color: #d32f2f;">sophomore year</span></b>, and it went through a <b><span style="color: #d32f2f;">strategic pivot</span></b> mid-way. <b><span style="color: #d32f2f;">Perhaps a little earlier than I was ready for. As a result, I encountered obstacles at many stages.</span></b></div>
+                        <div class="zh">这个项目是我<b><span style="color: #d32f2f;">大二</span></b>发起的大创，过程中经历了<b><span style="color: #d32f2f;">战略转向</span></b>。<b><span style="color: #d32f2f;">可能比我准备好要早了一些。因此我在很多阶段遇到了阻碍。</span></b></div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="en">The original plan was a "<b><span style="color: #d32f2f;">Jilin ICH bilingual corpus</span></b>" — collecting English introduction texts, doing discourse analysis to evaluate international communication effects. But during <b><span style="color: #d32f2f;">January-February 2025</span></b>, I did a month of <b><span style="color: #d32f2f;">field visits</span></b> to three major Jilin ICH museums and found the original plan infeasible: almost no foreign visitors during that period at any of the three museums; some had barely any English materials at all.</div>
+                        <div class="zh">原计划做的是"<b><span style="color: #d32f2f;">吉林省非遗双语语料库</span></b>"——收集英文介绍文本，做话语分析评估国际传播效果。但<b><span style="color: #d32f2f;">2025 年 1-2 月</span></b>我对吉林省三座主要非遗博物馆做了一个月的<b><span style="color: #d32f2f;">实地走访</span></b>，发现原计划不可行：三馆在此期间几乎没有外国游客到访，有的馆甚至基本没配备英文资料。</div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="en">Based on this reality, I made a judgment: better to solve the more urgent "<b><span style="color: #d32f2f;">from nothing to something</span></b>" problem than build a corpus nobody uses. So I pivoted the entire project from "<b><span style="color: #d32f2f;">corpus</span></b>" to "<b><span style="color: #d32f2f;">termbase</span></b>" construction — building a <b><span style="color: #d32f2f;">high-quality, time-limited open-source Chinese-English ICH termbase</span></b>.</div>
+                        <div class="zh">基于这个现实，我做了判断：与其做一个没人用的语料库，不如解决更紧迫的"<b><span style="color: #d32f2f;">从无到有</span></b>"问题。于是把整个项目重心从"<b><span style="color: #d32f2f;">语料库</span></b>"转向"<b><span style="color: #d32f2f;">术语库</span></b>"建设——做一个<b><span style="color: #d32f2f;">高质量、限时开源的汉英非遗术语库</span></b>。</div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="en">I further wrote a <b><span style="color: #d32f2f;">reflective paper</span></b> using <b><span style="color: #d32f2f;">Critical Heritage Studies'</span></b> "<b><span style="color: #d32f2f;">Authorised Heritage Discourse</span></b>" concept, questioning academia's optimistic discourse on <b><span style="color: #d32f2f;">ICH international communication feasibility</span></b> — under conditions lacking audience base and communication infrastructure, broad international communication feasibility may be overestimated; recommended <b><span style="color: #d32f2f;">prioritising localised preservation</span></b>.</div>
+                        <div class="zh">我进一步写了一篇<b><span style="color: #d32f2f;">反思论文</span></b>，用<b><span style="color: #d32f2f;">批判遗产研究</span></b>的"<b><span style="color: #d32f2f;">权威化遗产话语</span></b>"概念，质疑学界对<b><span style="color: #d32f2f;">非遗国际传播可行性</span></b>的乐观论述——在缺乏受众基础与传播基础设施的条件下，广泛的国际传播可行性或被高估，建议回归<b><span style="color: #d32f2f;">在地保护优先</span></b>。</div>
+            </div>
+        </div>
+
+            <!-- CBL Legal Translation -->
+            <h3 id="project-cbl">CBL 法律翻译 (60s 大幅刷新版)</h3>
+            
+                <div class="script-column">
+                    <div class="paragraph">
+                        <div class="en"><b><span style="color: #d32f2f;">Six-month</span></b> legal translation internship at <b><span style="color: #d32f2f;">CBL</span></b>. I helped build a <b><span style="color: #d32f2f;">Chinese-English legal termbase</span></b> and participated in the <b><span style="color: #d32f2f;">full translation workflow</span></b>. This experience gave me <b><span style="color: #d32f2f;">two levels of training</span></b>:</div>
+                        <div class="zh">CBL 法律翻译实习做了<b><span style="color: #d32f2f;">半年</span></b>，我协助建了<b><span style="color: #d32f2f;">中英法律术语库</span></b>，参与<b><span style="color: #d32f2f;">完整翻译流程</span></b>。这段经历给我<b><span style="color: #d32f2f;">两个层面的训练</span></b>：</div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="en">First, <b><span style="color: #d32f2f;">stylistic perception and control</span></b>. Words like <b><span style="color: #d32f2f;">shall, hereby, pursuant to</span></b> in legal texts made me realise <b><span style="color: #d32f2f;">style is a system</span></b>.</div>
+                        <div class="zh">第一是<b><span style="color: #d32f2f;">文体感知与控制</span></b>。法律文本的 <b><span style="color: #d32f2f;">shall、hereby、pursuant to</span></b> 这些词让我第一次意识到<b><span style="color: #d32f2f;">文体是一种系统</span></b>。</div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="en">Second, <b><span style="color: #d32f2f;">translation challenges in real contexts</span></b>. Later I did <b><span style="color: #d32f2f;">chat-record translation</span></b> — the parties were technical-domain speakers using jargon ("this is too hardcore"), also relying on context already built offline; I had difficulty understanding the Chinese itself. The company assigned me a <b><span style="color: #d32f2f;">translation mentor and a native editor</span></b>; once I matured, their annotations shifted from "directly pointing out errors" to "<b><span style="color: #d32f2f;">Q&A format discussions</span></b>" — what I learned wasn't just translation techniques but a <b><span style="color: #d32f2f;">cognitive habit</span></b>: any text can be split and examined along two dimensions — "<b><span style="color: #d32f2f;">meaning accuracy</span></b>" and "<b><span style="color: #d32f2f;">expression naturalness</span></b>".</div>
+                        <div class="zh">第二是<b><span style="color: #d32f2f;">真实语境的翻译挑战</span></b>。后期我做了<b><span style="color: #d32f2f;">聊天记录翻译</span></b>——双方是技术领域人士，说话带行话（"这个太硬核了"），还依赖线下已经构建好的语境，我理解中文本身就有困难。公司给我配了<b><span style="color: #d32f2f;">翻译 mentor 和母语者编辑</span></b>，后期我成熟后，他们的批注从"直接指出错误"变成"<b><span style="color: #d32f2f;">问答形式和我商量</span></b>"——我学到的不仅是翻译技巧，更是一种<b><span style="color: #d32f2f;">认知习惯</span></b>：任何文本都可以从"<b><span style="color: #d32f2f;">意思准确</span></b>"和"<b><span style="color: #d32f2f;">表达自然</span></b>"两个维度拆开审视。</div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="en">This experience directly spawned a corpus-based paper on the English translation of "non-full-time employment" in China's Labor Contract Law.</div>
+                        <div class="zh">这段经历直接催生了一篇基于语料库的论文，研究《劳动合同法》中"非全日制用工"的英译。</div>
+            </div>
+        </div>
+
+            <!-- AI Education -->
+            <h3 id="project-ai">AI 教育 Duolingo (45s)</h3>
+            
+                <div class="script-column">
+                    <div class="paragraph">
+                        <div class="en">This is an <b><span style="color: #d32f2f;">interdisciplinary project</span></b> where I did <b><span style="color: #d32f2f;">two related sub-studies</span></b>: one, <b><span style="color: #d32f2f;">sentiment analysis</span></b> on L2 writing in the <b><span style="color: #d32f2f;">ICNALE corpus</span></b> using <b><span style="color: #d32f2f;">VADER, TextBlob, and spaCy</span></b>, trying to incorporate lexical richness and syntactic complexity into the model — I found a "<b><span style="color: #d32f2f;">false confidence</span></b>" pattern among lower-proficiency learners, where the linguistic form is fluent and positive but the semantic content is empty; two, a <b><span style="color: #d32f2f;">Duolingo case study</span></b> applying <b><span style="color: #d32f2f;">Bandura, Vygotsky, and educational equity theory</span></b> to analyse how AI personalised learning impacts <b><span style="color: #d32f2f;">SES-related gaps</span></b>, culminating in a <b><span style="color: #d32f2f;">five-dimensional "AI + educational equity" framework</span></b>.</div>
+                        <div class="zh">这是一个<b><span style="color: #d32f2f;">跨学科项目</span></b>，我做了<b><span style="color: #d32f2f;">两个相互关联的子研究</span></b>：一是用 <b><span style="color: #d32f2f;">VADER、TextBlob、spaCy</span></b> 在 <b><span style="color: #d32f2f;">ICNALE 语料</span></b>上做<b><span style="color: #d32f2f;">情感分析</span></b>，尝试把词汇丰富度和句法复杂度纳入模型——发现低水平学习者里存在一种"<b><span style="color: #d32f2f;">虚假自信</span></b>"模式，语言形式流畅积极，但语义内容是空的；二是用 <b><span style="color: #d32f2f;">Bandura、Vygotsky 和教育公平理论</span></b>，对 <b><span style="color: #d32f2f;">Duolingo</span></b> 做案例研究，分析 AI 个性化学习对 <b><span style="color: #d32f2f;">SES 差距</span></b>的影响，最后提出了一个<b><span style="color: #d32f2f;">"AI + 教育公平"的五维框架</span></b>。</div>
+                    </div>
+                    <div class="paragraph">
+                        <div class="en">This experience made me realise: <b><span style="color: #d32f2f;">AI educational products themselves should be treated as objects of linguistic research</span></b>, not just as tools. That <b><span style="color: #d32f2f;">perspective shift</span></b> affected me deeply and directly connects to the direction I want to pursue in my PhD — using <b><span style="color: #d32f2f;">discourse analysis frameworks</span></b> to examine <b><span style="color: #d32f2f;">AI systems' linguistic output</span></b>.</div>
+                        <div class="zh">这段经历让我意识到：<b><span style="color: #d32f2f;">AI 教育产品本身应该被当作语言学研究对象</span></b>，不只是工具。这种<b><span style="color: #d32f2f;">视角转换</span></b>对我影响很大，也直接对接我博士想做的方向——用<b><span style="color: #d32f2f;">话语分析框架</span></b>审视 <b><span style="color: #d32f2f;">AI 系统的语言输出</span></b>。</div>
+            </div>
+        </div>
+
+            <!-- Robot Project -->
+            <h3 id="project-robot">巡逻机器人 (40s)</h3>
+            
+                <div class="script-column">
+                    <div class="paragraph">
+                        <div class="en">This was an <b><span style="color: #d32f2f;">interdisciplinary engineering project</span></b> where I <b><span style="color: #d32f2f;">led the strategy team</span></b>. I did <b><span style="color: #d32f2f;">three main things</span></b>: independently built and maintained a <b><span style="color: #d32f2f;">multilingual termbase</span></b> for cross-language adaptation of technical documents; used <b><span style="color: #d32f2f;">discourse analysis</span></b> to study promotional materials and user feedback in target markets; and led the <b><span style="color: #d32f2f;">global application research report</span></b> covering target markets' language policy, user habits, and technology acceptance. This experience showed me the <b><span style="color: #d32f2f;">real-world value of language resources</span></b> in globalised production — linguists aren't ivory-tower roles, but <b><span style="color: #d32f2f;">indispensable parts of industry</span></b>.</div>
+                        <div class="zh">这是个<b><span style="color: #d32f2f;">跨学科工科项目</span></b>，我<b><span style="color: #d32f2f;">带策略组</span></b>，主要做<b><span style="color: #d32f2f;">三件事</span></b>：独立搭建并维护<b><span style="color: #d32f2f;">多语言术语库</span></b>用于技术文档跨语言适配；用<b><span style="color: #d32f2f;">话语分析</span></b>研究目标市场的宣传材料和用户反馈；最后牵头写<b><span style="color: #d32f2f;">全球应用研究报告</span></b>，覆盖目标市场的语言政策、用户习惯和技术接受度。这段经历让我看到<b><span style="color: #d32f2f;">语言资源在全球化生产里的实际价值</span></b>——语言学家不是象牙塔里的角色，是<b><span style="color: #d32f2f;">产业里不可或缺的一环</span></b>。</div>
+            </div>
+        </div>
+
+            <!-- UN Geneva -->
+            <h3 id="project-un">联合国日内瓦 (30s)</h3>
+            
+                <div class="script-column">
+                    <div class="paragraph">
+                        <div class="en">A <b><span style="color: #d32f2f;">two-week field exchange</span></b> at the <b><span style="color: #d32f2f;">Palais des Nations</span></b> and several <b><span style="color: #d32f2f;">international organisations</span></b> in Geneva. I <b><span style="color: #d32f2f;">independently drafted</span></b> an English <b><span style="color: #d32f2f;">SDGs advocacy document</span></b> and received a <b><span style="color: #d32f2f;">recommendation letter</span></b> from the <b><span style="color: #d32f2f;">WFUNA Secretary-General</span></b>. This experience gave me my first close look at the <b><span style="color: #d32f2f;">discourse norms of international organisations</span></b> — how a piece of discourse achieves <b><span style="color: #d32f2f;">consensus</span></b> in a <b><span style="color: #d32f2f;">multilingual environment</span></b>. This observation later became one <b><span style="color: #d32f2f;">entry point for my sociolinguistic thinking</span></b>.</div>
+                        <div class="zh">在日内瓦万国宫和多个<b><span style="color: #d32f2f;">国际组织</span></b>实地交流<b><span style="color: #d32f2f;">两周</span></b>，<b><span style="color: #d32f2f;">独立起草</span></b>了一份 <b><span style="color: #d32f2f;">SDGs 英文倡导文件</span></b>，拿到 <b><span style="color: #d32f2f;">WFUNA 秘书长推荐信</span></b>。这段经历让我第一次近距离接触<b><span style="color: #d32f2f;">国际组织的话语规范</span></b>——一套话语如何在<b><span style="color: #d32f2f;">多语环境</span></b>下取得<b><span style="color: #d32f2f;">共识</span></b>。这个观察后来成了我做<b><span style="color: #d32f2f;">社会语言学思考的一个入口</span></b>。</div>
+            </div>
+        </div>
+
+            <!-- Changchun Admin -->
+            <h3 id="project-changchun">长春管委会 (30s)</h3>
+            
+                <div class="script-column">
+                    <div class="paragraph">
+                        <div class="en">A <b><span style="color: #d32f2f;">government administration internship</span></b> doing <b><span style="color: #d32f2f;">petition reception, policy interpretation, and document circulation</span></b>. Looks <b><span style="color: #d32f2f;">unrelated to linguistics</span></b>, but the <b><span style="color: #d32f2f;">petition window</span></b> gave me my first real look at how <b><span style="color: #d32f2f;">wording, register, and pragmatic framing</span></b> determine whether <b><span style="color: #d32f2f;">communication succeeds or fails</span></b> — the same policy, rephrased, has <b><span style="color: #d32f2f;">completely different public reception</span></b>. This later became a <b><span style="color: #d32f2f;">real-world source of my interest in institutional pragmatics</span></b>.</div>
+                        <div class="zh">一段<b><span style="color: #d32f2f;">政府行政实习</span></b>，做<b><span style="color: #d32f2f;">信访接待、政策解释、文书流转</span></b>。看起来<b><span style="color: #d32f2f;">跟语言学关系不大</span></b>，但<b><span style="color: #d32f2f;">信访窗口</span></b>让我第一次看到，<b><span style="color: #d32f2f;">措辞、语域和语用框架</span></b>如何决定<b><span style="color: #d32f2f;">沟通成败</span></b>——同样的政策，换一种表达，<b><span style="color: #d32f2f;">群众接受度完全不同</span></b>。这后来成为我对<b><span style="color: #d32f2f;">制度性语用（institutional pragmatics）兴趣的一个现实来源</span></b>。</div>
+            </div>
+        </div>
+
+        <!-- Module 4: 反问环节 -->
+        <div class="section" id="module4">
+            <h2>Module 4: 反问环节</h2>
+
+            <div class="script-column">
+                <div class="paragraph">
+                    <div class="en">
+                        <b>Question 1:</b> I'm very interested in <b><span style="color: #d32f2f;">pursuing a PhD</span></b> after the MA. Do you have any advice on <b><span style="color: #d32f2f;">how I can best prepare</span></b> during the programme?<br>
+                        <b>问题1：</b>我对硕士毕业后<b><span style="color: #d32f2f;">读博士</span></b>很感兴趣。您对硕士期间<b><span style="color: #d32f2f;">如何准备</span></b>有什么建议吗？
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <div class="en">
+                        <b>Question 2:</b> If I'm interested in working as a <b><span style="color: #d32f2f;">research assistant</span></b>, what kind of <b><span style="color: #d32f2f;">tasks</span></b> would I be doing?<br>
+                        <b>问题2：</b>如果我想做<b><span style="color: #d32f2f;">研究助理</span></b>，会做哪些<b><span style="color: #d32f2f;">工作</span></b>？
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <div class="en">
+                        <b>Question 3:</b> Are there any <b><span style="color: #d32f2f;">phonetics labs</span></b> or <b><span style="color: #d32f2f;">corpus resources</span></b> that MA students can access?<br>
+                        <b>问题3：</b>硕士生可以使用哪些<b><span style="color: #d32f2f;">语音实验室</span></b>或<b><span style="color: #d32f2f;">语料库资源</span></b>？
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        const sidebar = document.querySelector('.sidebar');
+        const toggle = document.getElementById('sidebarToggle');
+        const container = document.querySelector('.container');
+
+        // 检查localStorage中是否有侧边栏状态
+        const isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
+        if (isCollapsed) {
+            sidebar.classList.add('collapsed');
+            toggle.classList.add('collapsed');
+            container.classList.add('expanded');
+            toggle.textContent = '☰';
+        }
+
+        toggle.addEventListener('click', function() {
+            sidebar.classList.toggle('collapsed');
+            toggle.classList.toggle('collapsed');
+            container.classList.toggle('expanded');
+
+            // 切换按钮图标
+            if (sidebar.classList.contains('collapsed')) {
+                toggle.textContent = '☰';
+                localStorage.setItem('sidebarCollapsed', 'true');
+            } else {
+                toggle.textContent = '✕';
+                localStorage.setItem('sidebarCollapsed', 'false');
+            }
+        });
+
+        // 点击目录链接后自动收起侧边栏（移动端友好）
+        if (window.innerWidth <= 768) {
+            document.querySelectorAll('.sidebar a').forEach(link => {
+                link.addEventListener('click', function() {
+                    sidebar.classList.add('collapsed');
+                    toggle.classList.add('collapsed');
+                    container.classList.add('expanded');
+                    toggle.textContent = '☰';
+                    localStorage.setItem('sidebarCollapsed', 'true');
+                });
+            });
+        }
+
+        // 初始化按钮图标
+        if (!isCollapsed) {
+            toggle.textContent = '✕';
+        }
+    </script>
+</body>
+</html>
